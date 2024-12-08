@@ -46,25 +46,25 @@ public class BatteryPool
         return _pool.AsReadOnly();
     }
 
-    public void DistributePowerDemand(int newPowerDemand)
+    public async Task DistributePowerDemandAsync(int newPowerDemand, CancellationToken cancellationToken)
     {
         // Assumption:
-        // If positive the grid has excess power, so we charge the batteries
-        // If negetive the grid has power demand, so we discharge the batteries
+        // If positive the grid has excess power, charge the batteries
+        // If negetive the grid has power demand, discharge the batteries
 
         if(newPowerDemand > 0)
         {
             if(_chargeStrategy is null)
                 throw new InvalidOperationException("No charge strategy set");
 
-            _chargeStrategy.Execute(newPowerDemand,_pool);
+            await _chargeStrategy.ExecuteAsync(newPowerDemand,_pool, cancellationToken);
         }
         else if(newPowerDemand < 0)
         {
             if(_dischargeStrategy is null)
                 throw new InvalidOperationException("No discharge strategy set");
             
-            _dischargeStrategy.Execute(newPowerDemand,_pool);
+            await _dischargeStrategy.ExecuteAsync(newPowerDemand * -1,_pool, cancellationToken);
         }
     }
 

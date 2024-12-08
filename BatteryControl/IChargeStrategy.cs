@@ -4,5 +4,5 @@ namespace BatteryControl;
 
 public interface IChargeStrategy
 {
-    public void Execute(int inputPower, IReadOnlyCollection<Battery> batteries);
+    public Task ExecuteAsync(int inputPower, IReadOnlyCollection<Battery> batteries, CancellationToken cancellationToken);
 }

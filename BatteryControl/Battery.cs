@@ -1,6 +1,6 @@
 namespace BatteryControl;
 
-public class Battery
+public class Battery : IBattery
 {
     private int _currentPower = 0;
     private bool _isBusy;
