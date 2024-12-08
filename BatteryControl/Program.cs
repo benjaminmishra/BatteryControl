@@ -5,8 +5,8 @@ Console.WriteLine("Starting battery simulator");
 using var cts = new CancellationTokenSource();
 
 var pool = new BatteryPool();
-pool.SetChargeStrategy(new EqualChargeStrategy());
-pool.SetDischargeStrategy(new EqualDischargeStrategy());
+pool.SetChargeStrategy(new DefaultChargeStrategy());
+pool.SetDischargeStrategy(new DefaultDischargeStrategy());
 
 var source = new PowerCommandSource();
 var logger = new CsvLogger(pool, source);

@@ -4,6 +4,5 @@ namespace BatteryControl;
 
 public interface IDischargeStrategy
 {
-    public Task ExecuteAsync(int desiredOutputPower, IReadOnlyCollection<Battery> batteries,
-        CancellationToken cancellationToken);
+    public Task ExecuteAsync(int desiredOutputPower, IReadOnlyCollection<IBattery> batteries, CancellationToken cancellationToken);
 }

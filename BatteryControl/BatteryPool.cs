@@ -51,7 +51,6 @@ public class BatteryPool
         // Assumption:
         // If positive the grid has excess power, charge the batteries
         // If negetive the grid has power demand, discharge the batteries
-
         if(newPowerDemand > 0)
         {
             if(_chargeStrategy is null)
@@ -64,6 +63,7 @@ public class BatteryPool
             if(_dischargeStrategy is null)
                 throw new InvalidOperationException("No discharge strategy set");
             
+            // Change the new power demand to positive here to make calculations easy to understand
             await _dischargeStrategy.ExecuteAsync(newPowerDemand * -1,_pool, cancellationToken);
         }
     }
@@ -73,7 +73,6 @@ public class BatteryPool
         while (true)
         {
             await Task.Delay(1000);
-            
             var currentPower = _pool.Sum(battery => battery.GetCurrentPower());
             Console.WriteLine($"Current set power: {currentPower}");
         }

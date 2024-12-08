@@ -6,8 +6,8 @@ public class Battery : IBattery
     private bool _isBusy;
     private double _batteryPercent = 50;
 
-    public readonly int MaxChargePower;
-    public readonly int MaxDischargePower;
+    public int MaxChargePower { get; init; }
+    public int MaxDischargePower {get; init;}
 
     public Battery()
     {
@@ -29,7 +29,7 @@ public class Battery : IBattery
         {
             throw new ArgumentOutOfRangeException(nameof(newPower));
         }
-        
+
         if (newPower < -MaxDischargePower)
         {
             throw new ArgumentOutOfRangeException(nameof(newPower));
@@ -45,7 +45,7 @@ public class Battery : IBattery
         _currentPower = newPower;
         _isBusy = false;
     }
-    
+
     /// <summary>
     /// Returns the current amount of watts the battery charges/dischages.
     /// </summary>
@@ -83,9 +83,9 @@ public class Battery : IBattery
             if (_currentPower > 0 && _batteryPercent < 100)
             {
                 //Charge is not symetric with discharge
-                _batteryPercent += (double)_currentPower / 1200; 
+                _batteryPercent += (double)_currentPower / 1200;
             }
-            
+
             if (_currentPower < 0 && _batteryPercent > 0)
             {
                 _batteryPercent += (double)_currentPower / 1000;
