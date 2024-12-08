@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatteryControl.Tests", "BatteryControl.Tests\BatteryControl.Tests.csproj", "{D62C3FE1-9652-4D70-AC50-42035144A944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatteryControl", "BatteryControl\BatteryControl.csproj", "{5852DCD2-C2B6-4368-9E52-E40A84B6730D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D62C3FE1-9652-4D70-AC50-42035144A944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D62C3FE1-9652-4D70-AC50-42035144A944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D62C3FE1-9652-4D70-AC50-42035144A944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D62C3FE1-9652-4D70-AC50-42035144A944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5852DCD2-C2B6-4368-9E52-E40A84B6730D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5852DCD2-C2B6-4368-9E52-E40A84B6730D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5852DCD2-C2B6-4368-9E52-E40A84B6730D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5852DCD2-C2B6-4368-9E52-E40A84B6730D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
